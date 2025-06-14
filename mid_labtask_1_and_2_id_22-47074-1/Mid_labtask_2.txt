@@ -1,0 +1,50 @@
+1 No ans:
+
+select ename "Name" , sal "Salary"
+from emp
+where sal>2850;
+
+2 No ans:
+
+select ename "employee name" , empno "employee Number"
+from emp
+where empno=7566
+
+3 No ans:
+
+select ename "employee name" , job , hiredate "Start Date"
+from emp
+where hiredate between '20-feb-1981' and '1-may-1981'
+order by hiredate asc;
+
+4 N0 ans:
+
+select ename " Employee name", deptno "Department Number"
+from emp
+where deptno ='10' or deptno= '30'
+order by ename;
+
+5 No ans:
+
+select ename " Employee name" , sal " monthly salary"
+from emp
+where (sal>1500) and (deptno='10' or deptno='30');
+
+6 No ans:
+
+select ename,hiredate
+from emp
+where hiredate between '1-jan-1982' and '31-dec-1982';
+
+7 No ans:
+
+select ename " Name",job
+from emp
+where mgr is Null;
+
+8 No ans:
+
+select ename " Name",sal "Salary",comm "commission"
+from emp
+where comm>0
+order by sal desc,comm desc;

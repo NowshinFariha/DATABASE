@@ -1,0 +1,87 @@
+1_No:
+Select job,dname
+from emp e,dept d
+where e.deptno=d.deptno and(job='MANAGER'or job='CLERKS') and(dname='ACCOUNTING'or dname='MARKETING');
+
+2_NO:
+select*
+from emp e,dept d
+where e.deptno=d.deptno and e.job='SALESMAN' and d.loc<>'DALLAS';
+
+3_No:
+select dname,loc
+from emp e1,emp e2,dept d
+where e1.mgr =e2.empno and  e1.deptno= d.deptno and e2.ename ='CLARK' ;
+
+4_No:
+select dept.*
+from dept,emp
+where emp.deptno=dept.deptno and emp.job='MANAGER';
+
+5_No:
+select emp.* 
+from emp,dept 
+where emp.deptno=dept.deptno and dept.loc='DALLAS'
+
+7_No:
+select d.*, NVL(to_char(e.empno),'NO employees')
+from emp e,dept d
+where e.deptno(+)=d.deptno;
+
+8_No:
+select*
+from emp e,dept d
+where e.deptno(+)= d.deptno; 
+
+9_No:
+select d.*
+from emp e, dept d
+where e.deptno(+)=d.deptno and e.empno is NULL;
+
+10_No:
+select em1.ename,NVL(em2.ename,'CEO')"Manager Name"
+from emp em1,emp em2
+where em1.mgr=em2.empno(+);
+
+11_No:
+select DISTINCT e.ename,e1.deptno
+from emp e,emp e1
+where e.deptno=e1.deptno and e1.ename ='SCOTT';
+
+12_No:
+select e1*
+from emp e1,emp e2
+where e1.empno=e2.mgr
+and e1.hiredate<e2.hiredate;
+
+
+13_No:
+select *
+from emp w, emp m
+where w.mgr = m.empno
+  and w.sal> m.sal;
+
+14_No:
+select*
+from emp e,emp e1
+where e.sal=e1.sal
+and e.empno<>e1.empno;
+
+15_No:
+select e2.ename " EMPLOYEE NAME" , e2.hiredate"JONNING DATE OF EMP",e3.ename"MANAGER NAME",e3.hiredate "JONNING DATE OF MGR"
+from emp e1, emp e2, emp e3
+where e1.sal=e2.sal
+and e1.ename='SMITH'
+and e1.ename= e2.ename
+and e2.mgr= e3.empno;
+
+
+
+
+
+
+
+
+
+
+

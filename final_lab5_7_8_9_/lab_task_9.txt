@@ -1,0 +1,24 @@
+1_No_ANS:
+create view emp_vu (empno,employee,deptno)as select empno,ename,deptno
+from emp;
+
+2_No_ANS:
+select*from emp_vu;
+
+3_No_ANS:
+select employee,deptno
+from emp_vu;
+
+4_No_ANS:
+create view DEPT20 (employee_id,empioyee,department_id as
+select empno ,ename,deptno 
+from emp
+where e.deptno=d.deptno
+ and d.deptno=20;
+
+
+5_No_ANS:
+create view salary_vu (employee, department, salary, grade)
+as select e.ename,e.deptno,e.sal,s.grade
+from emp e,salagrade s
+where e.sal between s.losal and s.hisal;

@@ -1,0 +1,19 @@
+1_no ans:
+
+select max(sal),min(sal),round(avg(sal))
+from emp;
+
+2_no ans:
+
+select deptno,max(sal),min(sal),round(avg(sal))
+from emp
+group by deptno;
+
+3_no ans:
+
+select job, max(sal),min(sal),round(avg(sal))
+from emp
+group by job;
+
+6_no ans:
+

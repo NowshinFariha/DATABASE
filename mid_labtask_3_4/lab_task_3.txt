@@ -1,0 +1,42 @@
+1_no ans:
+
+select sysdate "Date"
+from dual;
+
+2_no ans:
+
+select empno "employee number",ename "Name",sal "salary",round(sal*1.15,0)"New salary"
+from emp;
+
+3_no ans:
+
+select empno "employee number",ename "Name",sal "salary",round(sal*1.15,0)"New salary", round(sal*1.15,0)-sal "Increase"
+from emp;
+
+4_no ans:
+
+select ename "employee's name",ename "Name",hiredate,to_char(next_day(hiredate, 'monday'),'fmDay, "the" Ddspth "of" month,YYYY')
+from emp;
+
+5_no ans:
+
+select ename,round(months_between(sysdate,hiredate))months_worked
+from emp
+order by months_between(sysdate,hiredate);
+
+6_no ans:
+
+select ename || 'earns' || sal || 'monthly but wants' || sal*3 "dream salaries" 
+from emp ;
+
+7_no ans:
+
+select initcap (ename) "Name",length (ename) "length"
+from emp 
+where ename LIKE'J%' or ename LIKE 'M%' or ename LIKE 'A%' ;
+
+8_no ans:
+
+select ename,NVL(to_char(comm),'No Commission')comm
+from emp;
+

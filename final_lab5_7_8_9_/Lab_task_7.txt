@@ -1,0 +1,130 @@
+1_no_ans:
+
+select*
+from emp
+where sal>All(select sal
+              from emp
+              where job='MANAGER');
+
+2_no_ans:
+
+select*
+from emp
+where sal>ANY (select sal
+              from emp
+              where job='MANAGER');
+
+3_no_ans:
+
+select empno,job,sal
+from emp
+where job='ANALYST'AND sal>ANY (select sal
+                               from emp
+                               where job='MANAGER');
+
+4_no_ans:
+
+select*
+from emp
+where deptno = (select deptno
+               from dept
+               where loc='DALLAS');
+
+5_no_ans:
+
+select dname,loc
+from dept
+where deptno IN (select deptno 
+                from emp
+                where job='CLERK');
+
+6_no_ans:
+
+select*
+from dept
+where deptno IN (select deptno
+                from emp
+                where job='MANAGER');
+
+7_no_ans:
+
+select sal "First max sal"
+from emp
+where empno IN (select empno
+               from emp
+               where sal=(select max(sal)
+               from emp));
+
+8_no_ans:
+
+select sal "second max sal"
+from emp
+where empno IN  (select empno
+                from emp
+                where sal=(select max(sal)
+                from emp
+                where sal<(select max(sal)
+                from emp)));
+
+9_no_ans:
+
+select sal "third max sal"
+from emp
+where empno IN  (select empno
+                from emp
+                where sal=(select max(sal)
+                from emp
+                where sal<(select max(sal)
+                from emp
+                where sal<(select max(sal)
+                from emp))));           
+
+10_no_ans:
+
+select*
+from emp
+where (job='MANAGER' OR job='CLERK') 
+       AND deptno IN (select deptno
+                      from dept
+                      where dname='ACCOUNTING'
+                      OR dname='MARKETING');
+
+11_no_ans:
+
+select*
+from emp
+where job='SALESMAN'AND deptno IN (select deptno
+                                   from dept
+                                   where loc<>'DALLAS');
+
+12_no_ans:
+
+select *
+from emp
+where deptno = (select deptno
+               from emp
+               where ename='SCOTT')
+AND ename<>'SCOTT';
+
+13_no_ans:
+
+select*
+from emp
+where sal IN (select sal
+             from emp
+             where ename='SMITH') 
+AND ename<>'SMITH';
+
+14_no_ans: 
+
+select*
+from emp
+where sal>0 AND dname = (select dname
+                        from dept
+                        where dname = 'marketing')
+15_no_ans:
+
+select*
+from emp
+where sal > (select avg(sal)
+            from emp);

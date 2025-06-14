@@ -1,0 +1,32 @@
+1 No Answer:
+
+select ename "name",deptno "departname"
+from emp;
+ 
+2 No Answer:
+
+select distinct job "name of job"
+from emp
+where deptno=30;
+
+3 No Answer:
+
+select loc  "location of department"
+from dept
+where deptno=30;
+
+4 No Answer:
+
+select ename "name of employee ", empno "employee no"
+from emp
+where comm>0;
+
+5 No Answer:
+
+select ename "employee name" , deptno "department no"
+from emp
+where ename LIKE '%A%';
+
+
+
+
